@@ -27,10 +27,10 @@ public class CustomUserStoreManager extends UniqueIDJDBCUserStoreManager {
 
     @Override
     public boolean doAuthenticate(String s, Object o) throws UserStoreException {
-        return isValidUserName(s);
+        return checkUserNameValidity(s);
     }
 
-    protected boolean isValidUserName(String userName) throws UserStoreException {
+    protected boolean checkUserNameValidity(String userName) throws UserStoreException {
 
         if (userName.contains("WSO2_")) {
             return true;
